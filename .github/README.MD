@@ -2,48 +2,56 @@
 
 1. Clone repo:
 
-```bash
+~~~bash
 git clone https://github.com/Milkcorn06/final.git
-```
+~~~
 
 2. Di chuyển vào repo:
 
-```bash
+~~~bash
 cd final
-```
+~~~
 
-3. Cài dependencies:
+3. Build project:
 
-```bash
-pnpm install
-```
+~~~bash
+mvn clean install
+~~~
 
 ## Chạy ứng dụng
 
-1. Khởi động sẻver dev:
+1. Khởi động server:
 
-```bash
-pnpm run dev
-```
+~~~bash
+./mvnw spring-boot:run
+~~~
 
-2. Mở trình duyệt:
+2. API endpoint URL:
 
-```
-http://localhost:5173
-```
+~~~
+http://localhost:8080
+~~~
 
 ## Cấu trúc dự án
 
-```
+~~~
 final/
 ├── src/
-│   ├── assets/        # CSS, Ảnh, Font...
-│   ├── components/    # Components có thể tái sử dụng
-│   ├── layout/        # Components bố cục
-│   ├── pages/         # Components trang
-│   └── utils/         # Các hàm chung
-```
+│   └── main/
+│       ├── java/
+│       │   └── com/ovftank/image/ovftank/
+│       │       ├── config/         # Cấu hình
+│       │       ├── controller/     # Xử lý request
+│       │       ├── model/          # Định nghĩa dữ liệu
+│       │       ├── repository/     # Tương tác db
+│       │       ├── service/        # Xử lý logic
+│       │       └── OvftankApplication.java
+│       └── resources/
+│           └── application.properties  # Cấu hình
+├── pom.xml                            # Quản lý thư viện
+└── .mvn/                             # Maven Wrapper
+~~~
 
-## Db setup
+## Database Setup
 
 ![database](https://github.com/Milkcorn06/final/blob/frontend/.github/database.png)
